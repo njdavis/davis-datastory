@@ -1,6 +1,29 @@
+/* TYPEFACES *******************************************************
+ ******************************************************************/
+ /* Font Pairings
+ *  Volkhov with Hammersmith One 
+ *  Amaranth with Yantramanav
+ */
+
+@font-face {
+    font-family: aller;
+    src: url(../fonts/Aller/Aller_Rg.ttf);
+}
+
+@font-face {
+    font-family: amaranth;
+    src: url(../fonts/Amaranth/Amaranth-Regular.ttf);
+}
+
+@font-face {
+    font-family: yan;
+    src: url(../fonts/Yantramanav/Yantramanav-Regular.ttf);
+}
 
 
-/* Navbar */
+/* BASIC ELEMENTS **************************************************
+ ******************************************************************/
+
 body{
 	margin: 0;
 	height: 100%;		
@@ -11,10 +34,135 @@ html{
 	height: 100%;
 }
 
-h1 {
-	-webkit-text-stroke: 5%;
-	font-size: 1000%;
+h2, h3{
+	color: #4199d7;
+	font-family: amaranth;
+	text-align: center;
 }
+
+
+@media all and (max-width: 767px){
+
+	h1 {
+		-webkit-text-stroke: 5%;
+		font-size: 300%;
+		font-family: amaranth;
+	}
+
+}
+
+@media all and (min-width: 768px){
+
+	h1 {
+		-webkit-text-stroke: 5%;
+		font-size: 1000%;
+		font-family: amaranth;
+	}
+}
+
+
+
+/* DATAVIZ *********************************************************
+ ******************************************************************/
+
+
+.percentReadImg, .numberReadImg, .articleSourceImg, .treeImg{
+	height: 90%;	
+	max-width: 100%;
+	display: block;
+    margin: auto;
+}
+.sourceNameImg{
+	height: 70%;	
+	max-width: 100%;
+	display: block;
+    margin: auto;
+
+}
+
+.legendTitle, .treeTitle{
+	max-height: 100%;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.percentRead, .numberRead, .articleSource, .tree{
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;	
+	justify-content: center;
+	align-items: center;
+}
+
+.legend{ grid-area: legend; }
+.percentRead{ grid-area: percentRead; }
+.numberRead{ grid-area: numberRead; }
+.articleSource{ grid-area: articleSource; }
+.sourceName{ grid-area: sourceName; }
+.treeTitle{ grid-area: treeTitle; }
+.tree{ grid-area: tree;	}
+
+/* Small Screens */
+h2{ font-size: 150%; }
+h3{ font-size: 80%; }
+
+#dataviz{
+	padding-top: 40px;
+	padding:10px;
+	height: 1190px;	
+}
+
+.grid {
+    display: grid;
+	width: 100%;
+	height: 1190px; 
+	/* sets the height of each row */
+	grid-template-rows: 50px 100px 100px 200px 260px 50px 300px ;
+	/* defines the grid areas */
+    grid-template-areas: 
+        "legend" 
+        "percentRead" 
+        "numberRead" 
+        "articleSource"
+		"sourceName"
+		"treeTitle"
+		"tree";
+	grid-gap: 10px;	
+}
+
+/* Large Screens */
+@media only screen and (min-width: 768px) {
+	h2{ font-size: 300%; }
+	h3{ font-size: 100%; }
+
+	#dataviz{
+		padding-top:70px;
+		padding-left:30px;
+		padding-right:30px;
+		height: 770px;	
+	}
+
+    .grid {
+		height: 100%;
+        /* sets the width of each column */
+        grid-template-columns: 1fr 3.5fr;
+        /* sets the height of each row */
+		grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+        /* defines the grid areas */
+        grid-template-areas: 
+            "legend		treeTitle" 
+			"percentRead	tree"
+			"numberRead		tree" 
+			"articleSource	tree"
+			"sourceName		tree";
+		grid-gap: 20px;
+	}
+}
+
+/* NAVBAR **********************************************************
+ ******************************************************************/
+
 
 #navbar {
 	overflow: hidden;
@@ -32,6 +180,7 @@ h1 {
 	color: #f2f2f2;
 	text-decoration: none;
 	font-size: 200%;
+	font-family: yan;
 }
 
 #navbar a:hover {
@@ -80,7 +229,9 @@ h1 {
 }
 
 
-/* Hero Image */
+/* HERO IMAGE ******************************************************
+ ******************************************************************/
+
 .hero {
 
 	background-image: url("../img/tempHeroImage.jpg");
@@ -112,9 +263,14 @@ h1 {
 }
 
 
-/* Table of Webhistory */
+/* DATA COLLECTION *************************************************
+ ******************************************************************/
+#data{
+	padding-top: 80px;
+}
+
 #webhistory {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: yan;
     border-collapse: collapse;
     width: 100%;	
 	}
@@ -133,7 +289,7 @@ h1 {
     text-align: left;
     background-color: #40Af5E;
     color: white;
-	padding-top:80px;
+	padding-top:12px;
 }
 
 #data {
