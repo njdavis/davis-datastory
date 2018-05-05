@@ -61,105 +61,6 @@ h2, h3{
 }
 
 
-
-/* DATAVIZ *********************************************************
- ******************************************************************/
-
-
-.percentReadImg, .numberReadImg, .articleSourceImg, .treeImg{
-	height: 90%;	
-	max-width: 100%;
-	display: block;
-    margin: auto;
-}
-.sourceNameImg{
-	height: 70%;	
-	max-width: 100%;
-	display: block;
-    margin: auto;
-
-}
-
-.legendTitle, .treeTitle{
-	max-height: 100%;	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.percentRead, .numberRead, .articleSource, .tree{
-	max-height: 100%;
-	display: flex;
-	flex-direction: column;	
-	justify-content: center;
-	align-items: center;
-}
-
-.legend{ grid-area: legend; }
-.percentRead{ grid-area: percentRead; }
-.numberRead{ grid-area: numberRead; }
-.articleSource{ grid-area: articleSource; }
-.sourceName{ grid-area: sourceName; }
-.treeTitle{ grid-area: treeTitle; }
-.tree{ grid-area: tree;	}
-
-/* Small Screens */
-h2{ font-size: 150%; }
-h3{ font-size: 80%; }
-
-#dataviz{
-	padding-top: 40px;
-	padding:10px;
-	height: 1190px;	
-}
-
-.grid {
-    display: grid;
-	width: 100%;
-	height: 1190px; 
-	/* sets the height of each row */
-	grid-template-rows: 50px 100px 100px 200px 260px 50px 300px ;
-	/* defines the grid areas */
-    grid-template-areas: 
-        "legend" 
-        "percentRead" 
-        "numberRead" 
-        "articleSource"
-		"sourceName"
-		"treeTitle"
-		"tree";
-	grid-gap: 10px;	
-}
-
-/* Large Screens */
-@media only screen and (min-width: 768px) {
-	h2{ font-size: 300%; }
-	h3{ font-size: 100%; }
-
-	#dataviz{
-		padding-top:70px;
-		padding-left:30px;
-		padding-right:30px;
-		height: 770px;	
-	}
-
-    .grid {
-		height: 100%;
-        /* sets the width of each column */
-        grid-template-columns: 1fr 3.5fr;
-        /* sets the height of each row */
-		grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
-        /* defines the grid areas */
-        grid-template-areas: 
-            "legend		treeTitle" 
-			"percentRead	tree"
-			"numberRead		tree" 
-			"articleSource	tree"
-			"sourceName		tree";
-		grid-gap: 20px;
-	}
-}
-
 /* NAVBAR **********************************************************
  ******************************************************************/
 
@@ -262,6 +163,104 @@ h3{ font-size: 80%; }
     color: #4199d7;
 }
 
+/* DATAVIZ *********************************************************
+ ******************************************************************/
+
+
+.percentReadImg, .numberReadImg, .articleSourceImg, .treeImg{
+	height: 90%;	
+	max-width: 100%;
+	display: block;
+    margin: auto;
+}
+.sourceNameImg{
+	height: 70%;	
+	max-width: 100%;
+	display: block;
+    margin: auto;
+
+}
+
+.legendTitle, .treeTitle{
+	max-height: 100%;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.percentRead, .numberRead, .articleSource, .tree{
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;	
+	justify-content: center;
+	align-items: center;
+}
+
+.legend{ grid-area: legend; }
+.percentRead{ grid-area: percentRead; }
+.numberRead{ grid-area: numberRead; }
+.articleSource{ grid-area: articleSource; }
+.sourceName{ grid-area: sourceName; }
+.treeTitle{ grid-area: treeTitle; }
+.tree{ grid-area: tree;	}
+
+/* Small Screens */
+h2{ font-size: 150%; }
+h3{ font-size: 80%; }
+
+#dataviz{
+	padding-top: 40px;
+	padding:10px;
+	height: 1190px;	
+}
+
+.grid {
+    display: grid;
+	width: 100%;
+	height: 1190px; 
+	/* sets the height of each row */
+	grid-template-rows: 50px 100px 100px 200px 260px 50px 300px ;
+	/* defines the grid areas */
+    grid-template-areas: 
+        "legend" 
+        "percentRead" 
+        "numberRead" 
+        "articleSource"
+		"sourceName"
+		"treeTitle"
+		"tree";
+	grid-gap: 10px;	
+}
+
+/* Large Screens */
+@media only screen and (min-width: 768px) {
+	h2{ font-size: 300%; }
+	h3{ font-size: 100%; }
+
+	#dataviz{
+		padding-top:70px;
+		padding-left:30px;
+		padding-right:30px;
+		height: 770px;	
+	}
+
+    .grid {
+		height: 100%;
+        /* sets the width of each column */
+        grid-template-columns: 1fr 3.5fr;
+        /* sets the height of each row */
+		grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+        /* defines the grid areas */
+        grid-template-areas: 
+            "legend		treeTitle" 
+			"percentRead	tree"
+			"numberRead		tree" 
+			"articleSource	tree"
+			"sourceName		tree";
+		grid-gap: 20px;
+	}
+}
+
 
 /* DATA COLLECTION *************************************************
  ******************************************************************/
@@ -292,8 +291,4 @@ h3{ font-size: 80%; }
 	padding-top:12px;
 }
 
-#data {
 
-	
-
-}
