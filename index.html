@@ -14,23 +14,68 @@
 
 <body>
 
-<div class = "hero" id="home">
-	<div class = "hero-text">
-		<h1> How Do I Browse the Web? </h1>
+
+<section id="homepage">
+	<div class="title">
+		
+			<h1 class="text"> How Do I Browse the Web? </h1>	
+		
 	</div>
-</div>
+</section>
 
-<div id="navbar">
-<a href="javascript:void(0);"  class="icon" onclick="mobileNavbar()">&#9776;</a>
-<a href="#home">Home</a>
-<a href="#dataviz">Vizualization</a>
-<a href="#data">Data</a>
-</div> 
+<section id="webstory">
+	<div class="grid" id="start">
+		<div class="box" style="background-color:#4CAF50">	
+			<h2 class="text" style="color:white;">What Did I Learn Making My Website?</h2>
+		</div>
+		<div class="box" id="button">
+			<a href="#criteria">
+				<img src="assets/img/computer.jpg">
+				<h2 class="text">What Design Criteria to Focus On</h2>
+			</a>
+		</div>
+		<div class="box" id="button">
+			<a href="#wireframe">
+				<img src="assets/img/wireframe.jpg">
+				<h2 class="text">How to Lay Out a Website</h2>
+			</a>
+			</div>
+		<div class="box" id="button">
+			<a href="#wireframe">
+				<img src="assets/img/css.jpg" href="css">
+				<h2 class="text">How to Write the Code</h2>
+			</a>
+		</div>
+	</div>
+		
+	<div class="grid" style="background-color: #4199d7" id="second">
 
-<script type="text/javascript" src="assets/js/navbar.js"></script>
+		<div class="box" id="criteria">
+			<img src="assets/img/computer.jpg" id="right">
+		</div>
+		<div class="textbox" id="criteria">
+			
+		</div>
+	
+		<div class="box" id="wireframe" >
+			<img src="assets/img/wireframe.jpg">
+		</div>
+		<div class="textbox" id="wireframe">
+			
+		</div>
 
-<div id="dataviz">
+		<div class="box" id="css" >
+			<img src="assets/img/css.jpg" id="right">
+		</div>
+		<div class="textbox" id="css">
+			
+		</div>
+	</div>
+	
+</section>
 
+
+<section id="dataviz">
 	<div class="grid"> 
 
 		<div class = "full">
@@ -72,10 +117,18 @@
 			<img src="assets/img/ENGL3844Project1-left.svg" alt="Noah Davis Dataviz" class="treeImg">
 		</div>
 	</div>
-</div>
+</section>
 
+<section id="video">
+	<h1> Video </h1>
 
-	<div id="data">
+	  	
+	
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dmvibtDGnRc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ 	
+	</section>
+
+<section id="data">
 	<div style="overflow-x:auto;">
 		<table id="webhistory">
 			<tr>
@@ -299,7 +352,7 @@
 
 		</table>
 	</div>
-	</div>
+	</section>
 
 
 </body>

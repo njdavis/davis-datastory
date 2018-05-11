@@ -1,24 +1,35 @@
 /* TYPEFACES *******************************************************
  ******************************************************************/
- /* Font Pairings
+/* Font Pairings
  *  Volkhov with Hammersmith One 
  *  Amaranth with Yantramanav
  */
 
 @font-face {
-    font-family: aller;
-    src: url(../fonts/Aller/Aller_Rg.ttf);
+	font-family: aller;
+	src: url(../fonts/Aller/Aller_Rg.ttf);
 }
 
 @font-face {
-    font-family: amaranth;
-    src: url(../fonts/Amaranth/Amaranth-Regular.ttf);
+	font-family: yan-regular;
+	src: url(../fonts/Yantramanav/Yantramanav-Regular.ttf);
 }
 
 @font-face {
-    font-family: yan;
-    src: url(../fonts/Yantramanav/Yantramanav-Regular.ttf);
+	font-family: yan-bold;
+	src: url(../fonts/Yantramanav/Yantramanav-Bold.ttf);
 }
+
+@font-face {
+	font-family: aller-bold;
+	src: url(../fonts/Aller/Aller_Bd.ttf);
+}
+
+@font-face {
+	font-family: amaranth-bold;
+	src: url(../fonts/Amaranth/Amaranth-Bold.ttf);
+}
+
 
 
 /* BASIC ELEMENTS **************************************************
@@ -36,166 +47,218 @@ html{
 
 h2{
 	color: #4199d7;
-	font-family: amaranth;
+	font-family: aller-bold;
 	text-align: center;
 }
 
 h3{
 	color: #4199d7;
-	font-family: yan;
+	font-family: aller;
 	text-align: center;
 }
 
-
-@media all and (max-width: 767px){
-
-	h1 {
-		text-shadow: 0 0 2px #000; /* horizontal-offset vertical-offset 'blur' colour */
-		-moz-text-shadow: 0 0 2px #000;
-		-webkit-text-shadow: 0 0 2px #000;
-		
-		font-size: 300%;
-		font-family: amaranth;
-	}
-
-}
-
-@media all and (min-width: 768px){
-
-	h1 {
-		font-size: 600%;
-		font-family: amaranth;
-	}
+h1{
+	font-family: aller-bold;	
 }
 
 
-/* NAVBAR **********************************************************
+
+
+
+/* WEBSITE DESIGN **************************************************
+ ******************************************************************/
+#homepage{
+	height: auto;	
+	background-color: #efefef;
+	padding-top: 40vh;	
+}
+
+#homepage > .title{
+	display: block;
+	background-color: #efefef;
+	position: relative;
+
+}
+
+.title> .text{	
+	font-size: 10vh;
+	display: block;
+	width: 100%;	
+	opacity: 1;
+	color: black;	
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	text-align: left;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); /* older browser fallback */
+	color: #4CAF50;
+	padding-bottom: 20vh;
+}
+
+/* WEBSITE DESIGN **************************************************
  ******************************************************************/
 
+/* Making a mobilescreen grid for the homepage */
+#webstory > .grid{
+	padding-top: 20vh;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	grid-gap: 2vw;
+}
 
-#navbar {
-	overflow: hidden;
-	background-color: #40Af5E;
-	height: 40px;
+
+
+#webstory{
+	overflow:visible;
+	background-color: #efefef;
+}
+
+
+#webstory .box{	
+	position: relative;
+	height: auto;
+}
+
+.box img{ /* for images in a grid-box */	
 	width: 100%;
-	text-align: center;
-	display: table;	
- }
-
-#navbar a {
-	display: table-cell;
 	height: 100%;
-	vertical-align: middle;
-	color: #f2f2f2;
-	text-decoration: none;
-	font-size: 200%;
-	font-family: yan;
+	object-fit: cover;
+	opacity: 0.2;
 }
 
-#navbar a:hover {
-	background-color: #ddd;
-	color: black;
+.box .text{
+	font-size: 5vh;
+	font-family: aller-bold;
+	display: block;
+	opacity: 1;
+	color: black;	
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	text-align: center;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); /* older browser fallback */
 }
 
-#navbar a.active {
+.box > img{ /* for images in a grid-box */
+	width: 50%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.8;
+}
+
+#webstory *  #button:hover {
 	background-color: #4CAF50;
-	color: white;
 }
 
-.navbarAtTop {
-	position: fixed;
-	top: 0;	
-	width: 100%;
-	height: 100%;
+#second > .textbox{
+	background-color: #EFEFEF;
 }
 
-#navbar .icon {
-    display: none;
-}
 
-@media screen and (max-width: 600px) {
-	#navbar a:not(:first-child) {display: none;}
-	#navbar  a.icon {
-		float: middle;
-		display: block;
+/* Medium Screens */
+@media only screen and (min-width: 600px) {
+
+	#webstory > .grid{
+		padding-top: 20vh; /*height of navbar */	
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* 2 x 2 grid */
+		grid-template-rows: 1fr
+							1fr;
+		position: relative;
+
 	}
-}
 
-@media screen and (max-width: 600px) {
-	#navbar.responsive + .navbarAtTop{position: relative;}
-	#navbar.responsive .icon {
-		float: middle;
-		display: block;
+
+	#webstory > .grid#start{
+		padding-left: 15vw;		
+	}
+
+	#webstory > .grid#second{
+		grid-template-rows: repeat(6, 20vh);
+		grid-template-columns: 40vw 56vw;		
 		
-
 	}
-	#navbar.responsive a {
-		float: middle;
-		display: block;
-		text-align: center;
-		vertical-align: middle;
+
+	#second > .textbox{
+		grid-column: 1/-1;
 	}
+
+
 }
 
 
-/* HERO IMAGE ******************************************************
- ******************************************************************/
+/* Large Screens */
+@media only screen and (min-width: 900px) {
 
-.hero {
-
-	background-image: url("../img/heroImg.jpg");
-
-	/* Need to calculate the height of the image to fit with the navbar.
-	 * The operation to achieve this is different for different browsers*/
-	/* Firefox */
-	height: -moz-calc(100% - 40px);
-	/* WebKit */
-	height: -webkit-calc(100% - 40px);
-	/* Opera */
-	height: -o-calc(100% - 40px);
-	/* Standard */
-	height: calc(100% - 40px);
-
-	background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.hero-text {
-	text-align: center;
-    position: absolute;	
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #4199d7;
-}
-
-.hero-text::after > h1{
-	font-size: 330%;
-	color: #000;
-}
-
-.hero-text::after{
-	content: '';
-	text-align: center;
-    position: absolute;	
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
 	
+	#webstory > .grid{
+		padding-top: 20vh;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 x 1 grid */
+		grid-template-rows: auto;
+		grid-auto-flow: row dense;
+		padding-bottom:10vh;
+		
+	}
+
+	.title>.text{
+		font-size: 6vw;
+	}
+
+	#webstory > .grid#start{
+		padding-left: 15vw;	
+	}
+
+	#webstory > .grid#second{
+		grid-template-rows: repeat(6, 20vh);
+		grid-template-columns: repeat(4, 1fr);	
+	}		
+		
+	#second > .textbox{
+		grid-area: auto/auto/span 2/ span 3;
+	}
+
+	#second > .textbox:nth-child(4n){
+		grid-area: 3/1/span 2/ span 3;
+	}
+
+	#second > .box{
+		grid-column-start: span 1;
+		grid-row-start: span 2;
+	}
+
+	.box > img{ /* for images in a grid-box */
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		object-fit: cover;
+		opacity: 0.8;
+	}
+
+	#second > .box:nth-child(4n+1) > img{
+		left: 50%;
+	}
+
 }
+
+
 
 /* DATAVIZ *********************************************************
  ******************************************************************/
-
+#dataviz{
+	padding:10px;
+	height: 1190px;	
+}
 
 .percentReadImg, .numberReadImg, .articleSourceImg, .sourceNameImg, .fullImg{ 
 	max-width: 100%;
 	max-height: auto;
 	display: block;
-    margin: auto;
+	margin: auto;
 }
 
 .treeImg{
@@ -240,27 +303,19 @@ h3{
 h2{ font-size: 200%; }
 h3{ font-size: 100%; }
 
-#dataviz{
-	padding-top: 40px;
-	padding:10px;
-	height: 1190px;	
-}
-
-
-
-.grid {
-    display: grid;
+#dataviz > .grid {
+	display: grid;
 	width: 100%;
 	height: 1100px; 	
 	/* defines the grid areas */
-    grid-template-areas: 
-        "legendTitle" 
-        "percentRead" 
-        "numberRead" 
-        "articleSource"
-		"sourceName"
-		"treeTitle"
-		"tree";
+	grid-template-areas: 
+	"legendTitle" 
+	"percentRead" 
+	"numberRead" 
+	"articleSource"
+	"sourceName"
+	"treeTitle"
+	"tree";
 	grid-gap: 20px;	
 
 }
@@ -271,7 +326,6 @@ h3{ font-size: 100%; }
 	h3{ font-size: 100%; }
 
 	#dataviz{
-		padding-top:70px;
 		padding-left:30px;
 		padding-right:30px;
 		height: 770px;	
@@ -280,7 +334,7 @@ h3{ font-size: 100%; }
 	.percentRead, .numberRead, .articleSource, .sourceName, .tree{
 		display: none;
 	}
-	
+
 	.full{
 		max-width: 100%;
 		max-height: auto;
@@ -290,38 +344,42 @@ h3{ font-size: 100%; }
 		align-items: center;
 	}
 
-    .grid {	
+	#dataviz > .grid {	
 		width: 100%;
 		height: 85%;	
-        /* column width using golden ratio*/
-        grid-template-columns: 1fr 3.234fr;
+		/* column width using golden ratio*/
+		grid-template-columns: 1fr 3.234fr;
 		grid-template-rows: auto;
-        /* defines the grid areas */
-        grid-template-areas: 
-			"legendTitle treeTitle"
-			"full full";
+		/* defines the grid areas */
+		grid-template-areas: 
+		"legendTitle treeTitle"
+		"full full";
 		grid-gap: 20px;
 
 	}
-	
-	
 
-	
-	
+}
+
+/* VIDEO ***********************************************************
+ ******************************************************************/
+#video{
+	height: 100vh;
+	width: 100%;
+	background-color: #955e90;
 }
 
 
 /* DATA COLLECTION *************************************************
  ******************************************************************/
 #data{
-	padding-top: 80px;
+
 }
 
 #webhistory {
 	font-family: yan;
-    border-collapse: collapse;
-    width: 100%;	
-	}
+	border-collapse: collapse;
+	width: 100%;	
+}
 
 #webhistory td, #webhistory th { 
 	padding: 8px;
@@ -333,10 +391,10 @@ h3{ font-size: 100%; }
 
 #webhistory th {
 
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #40Af5E;
-    color: white;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #40Af5E;
+	color: white;
 	padding-top:12px;
 }
 
